@@ -22,6 +22,17 @@ app.use("/songs", songsRouter)
 mongoose.connect(process.env.MONGO_DB!)
 	.then(() => {
 		console.log("Mongoose connected with database")
-		app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+		const server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+
+		const gracefulShutdown = (signal: string) => {
+			process.on(signal, async () => {
+				server.close()
+				await mongoose.disconnect()
+				console.log(`Server closed with ${signal}`)
+				process.exit(0)
+			})
+		}
+
+		["SIGTERM", "SIGINT"].forEach(signal => gracefulShutdown(signal))
 	})
 	.catch(console.error)
