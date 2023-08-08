@@ -10,5 +10,5 @@ export async function getSongById(req: Request, res: Response) {
 }
 
 export async function getSongs(_req: Request, res: Response) {
-	res.json(await Songs.find({}, null, { limit: 2 }))
+	res.json(await Songs.find({}, null, { limit: 10 }))
 }
