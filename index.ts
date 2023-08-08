@@ -5,6 +5,7 @@ import mongoose from "mongoose"
 
 // Import Routes
 import mediaRouter from "./routes/media.route"
+import songsRouter from "./routes/songs.route"
 
 config()
 
@@ -16,6 +17,7 @@ app.use(express.json())
 
 // Register Routes
 app.use("/media", mediaRouter)
+app.use("/songs", songsRouter)
 
 mongoose.connect(process.env.MONGO_DB!)
 	.then(() => {
