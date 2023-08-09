@@ -1,0 +1,27 @@
+:root {
+	color-scheme: dark;
+}
+
+html,
+body,
+#root {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+audio::-webkit-media-controls-enclosure {
+	border-radius: 0;
+	background: transparent;
+	outline: none;
+	padding-left: 0;
+}
+
+audio::-webkit-media-controls-panel {
+	background: transparent;
+	padding-left: 0;
+}
+
+audio::-webkit-media-controls-play-button {
+	display: none;
+}
