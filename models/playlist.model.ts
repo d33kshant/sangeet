@@ -13,10 +13,10 @@ const playlistSchema = new mongoose.Schema({
 		type: [String],
 		default: [],
 	},
-	// owner: {
-	// 	type: String,
-	// 	requierd: true
-	// },
+	album_art: {
+		type: String,
+		required: false,
+	},
 	is_album: {
 		type: Boolean,
 		default: false,
