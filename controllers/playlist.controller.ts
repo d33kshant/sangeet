@@ -6,5 +6,13 @@ export async function createPlaylist(req: Request, res: Response) {
 }
 
 export async function getPlaylistById(req: Request, res: Response) {
-	res.json(await Playlist.findById(req.params.id))
+	res.json(await Playlist.findById(req.params.id).populate("songs.song"))
+}
+
+export async function getPlalists(req: Request, res: Response) {
+	res.json(await Playlist.aggregate([{
+		$addFields: {
+			songs: { "$size": "$songs" }
+		}
+	}]))
 }
