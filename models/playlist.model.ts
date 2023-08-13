@@ -9,10 +9,10 @@ const playlistSchema = new mongoose.Schema({
 		type: String,
 		requierd: false
 	},
-	songs: {
-		type: [String],
-		default: [],
-	},
+	songs: [{
+		song: { type: mongoose.Types.ObjectId, ref: 'Song' },
+		time_added: Date
+	}],
 	album_art: {
 		type: String,
 		required: false,
