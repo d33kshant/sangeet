@@ -11,6 +11,6 @@ A spotify clone mini project with MERN Stack written in typescript, it uses the 
 ![Icons](https://img.shields.io/badge/Material_Icons-gray)
 ![Time Formatting](https://img.shields.io/badge/MomentJS-red)
 
-# Screenshots
+## Screenshots
 ![light theme screenshot](light.png)
 ![dark theme screenshot](dark.png)
